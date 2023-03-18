@@ -57,7 +57,7 @@ app.get('/getServices', function (req, res) {
 });
 
 /*process.env.PORT is for render.com. Environment Variable PORT is created*/
-const port = /*process.env.PORT*/3000;
+const port = process.env.PORT;
 
 app.listen(port, function (){
   console.log('Server is running on ' + port);
