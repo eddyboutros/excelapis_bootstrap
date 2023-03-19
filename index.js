@@ -56,6 +56,16 @@ app.get('/getServices', function (req, res) {
   });
 });
 
+app.get('/getTestimonials', function (req, res) {
+  const directoryPath = process.cwd();
+
+  excel(directoryPath + "/testimonials.xlsx").then((rows) => {
+    res.send(rows);
+  }).catch((error) => {
+    res.send("File does not exist!");
+  });
+});
+
 /*process.env.PORT is for render.com. Environment Variable PORT is created*/
 const port = process.env.PORT;
 
